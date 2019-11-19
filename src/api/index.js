@@ -7,3 +7,11 @@ export const fetchData = query => {
         params: query
     });
 };
+
+export const login = query => {
+    return request({
+        url: 'http://127.0.0.1:8088/login',
+        method: 'post',
+        params: query
+    });
+};
