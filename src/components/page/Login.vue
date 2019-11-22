@@ -28,7 +28,6 @@
 </template>
 
 <script>
-    import { login } from '../../api/index';
 
     export default {
         data: function() {
@@ -44,20 +43,23 @@
             submitForm() {
                 this.$refs.login.validate(valid => {
                     if (valid) {
+                        this.$message.success('登录成功');
+                        localStorage.setItem('ms_username', this.param.username);
+                        this.$router.push('/');
 
-                        login({
-                            username: this.param.username,
-                            password: this.param.password
-                        }).then(res => {
-                            if (res.status === "success") {
-                                this.$message.success('登录成功');
-                                localStorage.setItem('ms_username', this.param.username);
-                                this.$router.push('/');
-                            } else {
-                                this.param.password = null;
-                                this.$message.error('登陆失败');
-                            }
-                        });
+                        // login({
+                        //     username: this.param.username,
+                        //     password: this.param.password
+                        // }).then(res => {
+                        //     if (res.status === "success") {
+                        //         this.$message.success('登录成功');
+                        //         localStorage.setItem('ms_username', this.param.username);
+                        //         this.$router.push('/');
+                        //     } else {
+                        //         this.param.password = null;
+                        //         this.$message.error('登陆失败');
+                        //     }
+                        // });
 
                     } else {
                         this.$message.error('请输入账号和密码');

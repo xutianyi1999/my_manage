@@ -50,8 +50,9 @@
 </template>
 
 <script>
-import bus from '../common/bus';
-export default {
+    import bus from '../common/bus';
+
+    export default {
     data() {
         return {
             collapse: false,
@@ -65,6 +66,11 @@ export default {
                     icon: 'el-icon-lx-cascades',
                     index: 'table',
                     title: '基础表格'
+                },
+                {
+                    icon: 'el-icon-lx-cascades',
+                    index: 'dataDictionary',
+                    title: '数据字典'
                 },
                 {
                     icon: 'el-icon-lx-copy',

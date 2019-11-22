@@ -31,8 +31,13 @@ export default new Router({
                 },
                 {
                     path: '/table',
-                    component: () => import(/* webpackChunkName: "table" */ '../components/page/BaseTable.vue'),
+                    component: () => import(/* webpackChunkName: "table" */ '../components/page/basic/BaseTable.vue'),
                     meta: { title: '基础表格' }
+                },
+                {
+                    path: '/dataDictionary',
+                    component: () => import(/* webpackChunkName: "table" */ '../components/page/basic/DataDictionary.vue'),
+                    meta: { title: '数据字典' }
                 },
                 {
                     path: '/tabs',
